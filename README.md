@@ -56,4 +56,4 @@ Este backend proporciona una API para gestionar las respuestas de encuestas. Pue
 
 Asegúrese de configurar las rutas y las solicitudes en su frontend según sus necesidades.
 
-¡Disfrute trabajando con el backend de Henry-challenge-backend! Si tiene alguna pregunta o necesita ayuda adicional, no dude en consultar la documentación o ponerse en contacto conmigo :).
+
