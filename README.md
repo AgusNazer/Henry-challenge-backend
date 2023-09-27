@@ -8,10 +8,10 @@ Este repositorio contiene el código fuente del backend para el proyecto del des
 
 El backend de Henry-challenge-backend se ha desarrollado utilizando las siguientes tecnologías y herramientas:
 
-- **Node.js:** 
-- **Express.js:** 
-- **MongoDB:** 
-- **Mongoose:**
+- **Node.js** 
+- **Express.js** 
+- **MongoDB** 
+- **Mongoose**
 
 ## Configuración del Entorno
 
