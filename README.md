@@ -48,8 +48,6 @@ Este backend proporciona una API para gestionar las respuestas de encuestas. Pue
 
 - `GET /api/respuestas`: Obtiene todas las respuestas de encuestas almacenadas en la base de datos.
 
-- `GET /api/respuestas/:id`: Obtiene una respuesta de encuesta específica por su ID.
-
 - `POST /api/respuestas`: Crea una nueva respuesta de encuesta.
 
 - `PUT /api/respuestas/:id`: Actualiza una respuesta de encuesta existente por su ID.
@@ -58,4 +56,4 @@ Este backend proporciona una API para gestionar las respuestas de encuestas. Pue
 
 Asegúrese de configurar las rutas y las solicitudes en su frontend según sus necesidades.
 
-¡Disfrute trabajando con el backend de Henry-challenge-backend! Si tiene alguna pregunta o necesita ayuda adicional, no dude en consultar la documentación o ponerse en contacto con el desarrollador.
+¡Disfrute trabajando con el backend de Henry-challenge-backend! Si tiene alguna pregunta o necesita ayuda adicional, no dude en consultar la documentación o ponerse en contacto conmigo :).
