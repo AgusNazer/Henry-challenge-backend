@@ -18,7 +18,7 @@ app.use(express.json());
 
 
 const encuestasRoutes = require('./routes/encuestasRoutes');
-const respuestasRoutes = require('./routes/respuestasRoutes');
+// const respuestasRoutes = require('./routes/respuestasRoutes');
 
 mongoose 
 .connect(process.env.MONGODB_URL)
@@ -26,7 +26,7 @@ mongoose
 .catch((err) => console.log(err));
 
 app.use('/api', encuestasRoutes); // Puedes ajustar el prefijo '/api' según tus necesidades
-app.use('/api', respuestasRoutes); // Puedes ajustar el prefijo '/api' según tus necesidades
+// app.use('/api', respuestasRoutes); // Puedes ajustar el prefijo '/api' según tus necesidades
 
 
 // Definir rutas y controladores aquí (en pasos posteriores).

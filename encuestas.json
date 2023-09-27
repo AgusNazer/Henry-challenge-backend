@@ -6,7 +6,12 @@
       "name": "full_name",
       "required": true
     },
-    {},
+    {
+      "type": "tel",
+      "label": "Número de teléfono", 
+      "name": "phone_number", 
+      "required": true
+    },
     {
       "type": "date",
       "label": "Fecha de inicio",

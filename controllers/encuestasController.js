@@ -44,16 +44,16 @@ exports.createEncuesta = (req, res) => {
 
 
 // obtengo encuestas de la db
-exports.getEncuestas = (req, res) => {
-  const Encuesta = require('../models/encuestaModel'); 
-  Encuesta.find({})
-    .then((encuestas) => {
+exports.getRespuestas = (req, res) => {
+  const Respuesta = require('../models/encuestaModel'); 
+  Respuesta.find({})
+    .then((respuestas) => {
       // Envío las encuestas al front
-      res.json(encuestas);
+      res.json(respuestas);
     })
     .catch((error) => {
-      console.error('Error al obtener encuestas:', error);
-      res.status(500).json({ error: 'Error al obtener encuestas' });
+      console.error('Error al obtener respuestas:', error);
+      res.status(500).json({ error: 'Error al obtener respuestas' });
     });
 };
 
@@ -76,3 +76,56 @@ exports.getEncuestaById = (req, res) => {
       res.status(500).json({ error: 'Error al obtener encuesta por ID' });
     });
 };
+
+// post para actualizar
+exports.updateRespuesta = async (req, res) => {
+  try {
+    const Respuesta = require('../models/encuestaModel');
+    const { id } = req.params;
+
+    // Encuentra la respuesta de encuesta por su ID y actualízala
+    const respuesta = await Respuesta.findByIdAndUpdate(
+      id,
+      {
+        full_name: req.body.full_name,
+        phone_number: req.body.phone_number,
+        start_date: req.body.start_date,
+        preferred_language: req.body.preferred_language,
+        how_found: req.body.how_found,
+        newsletter_subscription: req.body.newsletter_subscription
+      },
+      { new: true }
+    );
+
+    if (!respuesta) {
+      return res.status(404).json({ error: 'Respuesta de encuesta no encontrada' });
+    }
+
+    res.status(200).json(respuesta);
+  } catch (error) {
+    console.error('Error al actualizar respuesta de encuesta:', error);
+    res.status(500).json({ error: 'Error al actualizar respuesta de encuesta' });
+  }
+};
+
+// deleteeeee
+
+exports.deleteRespuesta = async (req, res) => {
+  const Respuesta = require('../models/encuestaModel');
+  try {
+    const { id } = req.params;
+
+    // Encuentra la respuesta de encuesta por su ID y elimínala
+    const respuesta = await Respuesta.findByIdAndDelete(id);
+
+    if (!respuesta) {
+      return res.status(404).json({ error: 'Respuesta de encuesta no encontrada' });
+    }
+
+    res.status(200).json({ message: 'Respuesta de encuesta eliminada con éxito' });
+  } catch (error) {
+    console.error('Error al eliminar respuesta de encuesta:', error);
+    res.status(500).json({ error: 'Error al eliminar respuesta de encuesta' });
+  }
+};
+
